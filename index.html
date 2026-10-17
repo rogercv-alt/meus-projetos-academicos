@@ -1,20 +1,217 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <title>Meus Projetos Acadêmicos</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#0b1020">
+  <title>Meu Portfólio | Engenharia de Software</title>
+  <style>
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: #0b1020;
+      color: #f4f5ff;
+      line-height: 1.6;
+    }
+    a { color: inherit; text-decoration: none; }
+    .container { width: min(1080px, 90%); margin: auto; }
+    header {
+      border-bottom: 1px solid #252c43;
+      background: rgba(11,16,32,.92);
+    }
+    nav {
+      min-height: 76px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 20px;
+    }
+    .brand { display: flex; align-items: center; gap: 12px; font-weight: bold; }
+    .brand-icon {
+      width: 42px; height: 42px; display: grid; place-items: center;
+      border-radius: 13px;
+      background: linear-gradient(135deg, #8b5cf6, #22d3ee);
+      color: white; font-size: 22px;
+    }
+    .nav-links { display: flex; gap: 25px; color: #b8c0d9; font-size: 14px; }
+    .nav-links a:hover { color: #a78bfa; }
+    .hero {
+      padding: 82px 0 72px;
+      display: grid; grid-template-columns: 1.15fr .85fr;
+      align-items: center; gap: 55px;
+    }
+    .eyebrow {
+      color: #67e8f9; text-transform: uppercase;
+      letter-spacing: 2px; font-size: 12px; font-weight: bold;
+    }
+    h1 { font-size: clamp(38px, 5.5vw, 62px); line-height: 1.1; margin: 18px 0; letter-spacing: -2px; }
+    .gradient-text {
+      background: linear-gradient(90deg, #a78bfa, #67e8f9);
+      -webkit-background-clip: text; background-clip: text; color: transparent;
+    }
+    .intro { color: #b8c0d9; font-size: 17px; max-width: 540px; }
+    .button {
+      display: inline-block; margin-top: 20px; padding: 13px 21px;
+      border-radius: 12px; background: linear-gradient(100deg,#7c3aed,#2563eb);
+      color: white; font-weight: bold; box-shadow: 0 8px 28px #4f46e533;
+    }
+    .button:hover { transform: translateY(-2px); }
+    .showcase {
+      border: 1px solid #303854; border-radius: 24px; padding: 28px;
+      background: linear-gradient(145deg,#171d35,#101729);
+      box-shadow: 0 25px 70px #00000033;
+    }
+    .showcase-icon {
+      width: 66px; height: 66px; display: grid; place-items: center;
+      border-radius: 19px; background: #29214b; font-size: 32px; margin: 20px 0;
+    }
+    .showcase h2 { margin: 5px 0; font-size: 25px; }
+    .muted { color: #aab4ce; }
+    .tags { display: flex; gap: 8px; flex-wrap: wrap; margin-top: 20px; }
+    .tag {
+      font-size: 12px; color: #c4b5fd; padding: 7px 10px;
+      border-radius: 100px; background: #292344; border: 1px solid #45366c;
+    }
+    section { padding: 60px 0; }
+    .section-heading { margin-bottom: 28px; }
+    .section-heading h2 { font-size: 33px; margin: 8px 0; }
+    .section-heading p { color: #aab4ce; margin: 0; }
+    .grid { display: grid; grid-template-columns: repeat(3,1fr); gap: 18px; }
+    .subject {
+      padding: 23px; border-radius: 18px;
+      border: 1px solid #29324b; background: #121a2d;
+      transition: transform .2s, border-color .2s;
+    }
+    .subject:hover { transform: translateY(-5px); border-color: #8270e8; }
+    .subject-icon {
+      width: 48px; height: 48px; display: grid; place-items: center;
+      border-radius: 15px; background: #222b45; font-size: 24px;
+    }
+    .subject small { display: block; margin-top: 18px; color: #67e8f9; letter-spacing: 1px; font-size: 10px; }
+    .subject h3 { font-size: 18px; margin: 7px 0; }
+    .subject p { margin: 0; color: #aab4ce; font-size: 14px; }
+    .about {
+      padding: 30px; border: 1px solid #29324b; border-radius: 20px;
+      background: linear-gradient(120deg,#171d35,#121a2d);
+    }
+    .about p { color: #b8c0d9; margin-bottom: 0; }
+    footer { margin-top: 35px; padding: 28px 0; border-top: 1px solid #252c43; color: #8e9ab7; font-size: 13px; text-align: center; }
+    @media (max-width: 760px) {
+      .hero { grid-template-columns: 1fr; gap: 30px; padding: 55px 0; }
+      .grid { grid-template-columns: 1fr; }
+      .nav-links { gap: 13px; font-size: 12px; }
+      .brand { font-size: 13px; }
+      .brand-icon { width: 35px; height: 35px; }
+      .section-heading h2 { font-size: 28px; }
+    }
+  </style>
 </head>
 <body>
-    <h1>Meus Projetos Acadêmicos</h1>
-    <p>Olá! Este é meu portfólio acadêmico.</p>
-    <h2>Minhas matérias</h2>
-    <ul>
-        <li>Bootcamp 1</li>
-        <li>Fundamentos de Engenharia</li>
-        <li>Banco de Dados 1</li>
-        <li>Engenharia de Software</li>
-        <li>Introdução à Computação</li>
-        <li>Lógica de Programação</li>
-    </ul>
+  <header>
+    <nav class="container">
+      <a class="brand" href="#inicio">
+        <span class="brand-icon">&lt;/&gt;</span>
+        <span>MEU PORTFÓLIO</span>
+      </a>
+      <div class="nav-links">
+        <a href="#inicio">Início</a>
+        <a href="#materias">Matérias</a>
+        <a href="#sobre">Sobre</a>
+      </div>
+    </nav>
+  </header>
+
+  <main class="container">
+    <section class="hero" id="inicio">
+      <div>
+        <div class="eyebrow">Portfólio acadêmico</div>
+        <h1>Transformando aprendizado em <span class="gradient-text">projetos.</span></h1>
+        <p class="intro">
+          Olá! Este é meu espaço acadêmico, criado para organizar meus estudos,
+          compartilhar atividades e acompanhar minha evolução na Engenharia de Software.
+        </p>
+        <a class="button" href="#materias">Conheça minhas matérias &nbsp; →</a>
+      </div>
+
+      <div class="showcase">
+        <div class="eyebrow">Minha jornada</div>
+        <div class="showcase-icon">💻</div>
+        <h2>Engenharia de Software</h2>
+        <p class="muted">Aprender, praticar e construir novas soluções. Um passo de cada vez.</p>
+        <div class="tags">
+          <span class="tag">Programação</span>
+          <span class="tag">Tecnologia</span>
+          <span class="tag">Banco de dados</span>
+        </div>
+      </div>
+    </section>
+
+    <section id="materias">
+      <div class="section-heading">
+        <div class="eyebrow">Minha trajetória</div>
+        <h2>Minhas matérias</h2>
+        <p>Conhecimentos e atividades desenvolvidos ao longo da graduação.</p>
+      </div>
+
+      <div class="grid">
+        <article class="subject">
+          <div class="subject-icon">🚀</div>
+          <small>MATÉRIA 01</small>
+          <h3>Bootcamp 1</h3>
+          <p>Espaço para desafios, atividades práticas e aprendizados do bootcamp.</p>
+        </article>
+        <article class="subject">
+          <div class="subject-icon">🧭</div>
+          <small>MATÉRIA 02</small>
+          <h3>Fundamentos de Engenharia</h3>
+          <p>Conceitos fundamentais, métodos e princípios da engenharia.</p>
+        </article>
+        <article class="subject">
+          <div class="subject-icon">🗄️</div>
+          <small>MATÉRIA 03</small>
+          <h3>Banco de Dados 1</h3>
+          <p>Estudos de modelagem de dados, tabelas e consultas SQL.</p>
+        </article>
+        <article class="subject">
+          <div class="subject-icon">🧩</div>
+          <small>MATÉRIA 04</small>
+          <h3>Engenharia de Software</h3>
+          <p>Organização, análise e desenvolvimento de soluções de software.</p>
+        </article>
+        <article class="subject">
+          <div class="subject-icon">💡</div>
+          <small>MATÉRIA 05</small>
+          <h3>Introdução à Computação</h3>
+          <p>Conceitos essenciais sobre computadores e o universo da tecnologia.</p>
+        </article>
+        <article class="subject">
+          <div class="subject-icon">🧠</div>
+          <small>MATÉRIA 06</small>
+          <h3>Lógica de Programação</h3>
+          <p>Algoritmos, raciocínio lógico e resolução de problemas.</p>
+        </article>
+      </div>
+    </section>
+
+    <section id="sobre">
+      <div class="section-heading">
+        <div class="eyebrow">Um pouco sobre este espaço</div>
+        <h2>Aprendizado em evolução</h2>
+      </div>
+      <div class="about">
+        <p>
+          Este portfólio reúne a organização dos meus estudos e servirá como um espaço
+          para apresentar meus trabalhos acadêmicos. O objetivo é registrar minha evolução,
+          praticar novas habilidades e construir minha trajetória na área de tecnologia.
+        </p>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container">Portfólio Acadêmico · Engenharia de Software · Feito com dedicação.</div>
+  </footer>
 </body>
 </html>
